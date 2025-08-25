@@ -1,0 +1,13 @@
+name: lets go hell again
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+    
+jobs:
+  myfirst_job:
+     runs-on: ubuntu-latest
+     steps:
+       - run: echo "👋 Hello World!"
