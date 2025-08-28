@@ -12,7 +12,7 @@ on:
         description: give your full name here
         default: just test
       here antoher thing:
-        type: text
+        type: choice
         required: true
         description: give your full name here
         default: just test
