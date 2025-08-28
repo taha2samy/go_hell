@@ -20,7 +20,15 @@ on:
           - "hi"
           - "hi2"
           - "hi3"
-    
+      here antoher:
+        type: environment
+        required: true
+        description: give your full name here
+        default: just test
+        options:
+          - "hi"
+          - "hi2"
+          - "hi3"
     
 jobs:
   myfirst_job:
