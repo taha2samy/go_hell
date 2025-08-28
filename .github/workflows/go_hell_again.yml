@@ -5,6 +5,12 @@ on:
     branches: 
       - main
   workflow_dispatch:
+    inputs:
+      just_name:
+        type: text
+        required: true
+        description: give your full name here
+        default: just test
     
 jobs:
   myfirst_job:
