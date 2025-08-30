@@ -41,7 +41,7 @@ jobs:
      runs-on: ubuntu-latest
      environment:
       name: production
-      url: www.google.com
+      url: https://www.google.com
      steps:
        - run: echo "👋 Hello World!"
        - name: Checkout
@@ -49,3 +49,29 @@ jobs:
        - run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
+          
+  thired_job:
+     runs-on: ubuntu-latest
+     environment:
+      name: abat
+      url: https://www.google.com
+     steps:
+       - run: echo "👋 Hello World!"
+       - name: Checkout
+         uses: actions/checkout@v5.0.0
+       - run: |
+          echo "The repository ${{ github.repository }} contains the following files:"
+          tree
+  fourth_job:
+     runs-on: ubuntu-latest
+     environment:
+      name: staging
+      url: https://www.google.com
+     steps:
+       - run: echo "👋 Hello World!"
+       - name: Checkout
+         uses: actions/checkout@v5.0.0
+       - run: |
+          echo "The repository ${{ github.repository }} contains the following files:"
+          tree
+
