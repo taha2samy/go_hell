@@ -1,3 +1,4 @@
+name: just_example on needs
 on:
   push:
     branches:
