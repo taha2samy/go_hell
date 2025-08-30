@@ -32,11 +32,7 @@ jobs:
        - run: echo "👋 Hello World!"
        - name: Checkout
          uses: actions/checkout@v5.0.0
-       - run: |
-          echo "The repository ${{ github.repository }} contains the following files:"
-          tree
-          
-
+       - run: echo "The repository ${{ github.repository }} contains the following files:"
   second_job:
      runs-on: ubuntu-latest
      environment:
@@ -49,7 +45,6 @@ jobs:
        - run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
-          
   thired_job:
      runs-on: ubuntu-latest
      environment:
@@ -59,9 +54,7 @@ jobs:
        - run: echo "👋 Hello World!"
        - name: Checkout
          uses: actions/checkout@v5.0.0
-       - run: |
-          echo "The repository ${{ github.repository }} contains the following files:"
-          tree
+       - run: echo "The repository ${{ github.repository }} contains the following files:"
   fourth_job:
      runs-on: ubuntu-latest
      environment:
@@ -71,7 +64,9 @@ jobs:
        - run: echo "👋 Hello World!"
        - name: Checkout
          uses: actions/checkout@v5.0.0
-       - run: |
-          echo "The repository ${{ github.repository }} contains the following files:"
-          tree
+       - run:  echo "The repository ${{ github.repository }} contains the following files:"
+       - name: github context
+         run: echo '${{ toJSON(github) }}'
+           
 
+  
