@@ -2,7 +2,8 @@ name: Build and Deploy Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,15 +19,14 @@ jobs:
       - name: Run build process...
         run: |
           echo "Build ID: ${{ steps.generate_id.outputs.id }}"
-
   deploy:
     name: Deploy to Production
     runs-on: ubuntu-latest
     needs: build
-    
     steps:
       - name: Deploying with the correct ID
         run: echo "Build ID: ${{ needs.build.outputs.build_id }}"
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
-        run: echo "The build job was successful!"  
+        run: echo "The build job was successful!"
+
