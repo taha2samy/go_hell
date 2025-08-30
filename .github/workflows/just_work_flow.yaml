@@ -26,3 +26,8 @@ jobs:
     steps:
       - name: Deploying with the correct ID
         run: echo "Deploying Build ID:${x}"
+      - name: Check build result (just for demonstration)
+        if: ${{ needs.build.result == 'success' }}
+        run: echo "The build job was successful!"
+      - name: just echo id
+        run: echo ${{needs.build.outputs.build_id}}
