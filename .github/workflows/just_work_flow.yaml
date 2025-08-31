@@ -41,7 +41,6 @@ jobs:
         run: echo "The build job was successful!"
       - name: just echo id
         run: echo ${{needs.build.outputs.build_id}}
-      - name: warning
       - name: show warning and error with file link
         run: |
           echo "::warning file=README.md,line=1::The value of variable x is something warning"
