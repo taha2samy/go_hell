@@ -40,3 +40,7 @@ jobs:
         run: echo "The build job was successful!"
       - name: just echo id
         run: echo ${{needs.build.outputs.build_id}}
+      - name: warning
+        run: echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+      - name: error
+        run: echo "::error file=app.js,line=1,col=5,endColumn=7::Error in app.js"
