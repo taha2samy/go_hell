@@ -29,9 +29,11 @@ jobs:
       - name: echo debug
         run: echo "::debug::The value of variable x is something debug"
       - name: echo warning
-        run: echo "::note::The value of variable x is something note"
+        run: echo "::notice::The value of variable x is something note"
       - name: echo warning
         run: echo "::warning::The value of variable x is something warning"
+      - name: echo error
+        run: echo "::error::This is an error message"
 
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
