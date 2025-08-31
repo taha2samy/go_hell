@@ -63,9 +63,9 @@ jobs:
           echo "::error::This is a general error message."
 
           echo "----------------------------------------------------"
-          echo "::notice file=README.md,line=1,title=FYI::Just a note on the README file."
-          echo "::warning file=README.md,line=2,title=Potential Issue::This line might need a review."
-          echo "::error file=README.md,line=4,title=Critical Error::Something is wrong on this line!"
+          echo "::notice file=README.md,line=1,title=FYI,endColumn=7::Just a note on the README file."
+          echo "::warning file=README.md,line=2,title=Potential Issue,endColumn=3::This line might need a review."
+          echo "::error file=README.md,line=4,title=Critical Error,endColumn=5::Something is wrong on this line!"
 
       - name: Check build job result
         if: ${{ needs.build.result == 'success' }}
