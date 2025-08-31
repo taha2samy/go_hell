@@ -24,6 +24,8 @@ jobs:
       x: "${{ needs.build.outputs.build_id }}"
     needs: build
     steps:
+      - name: get repo 
+        uses: actions/checkout@v3
       - name: Deploying with the correct ID
         run: echo "Deploying Build ID:${x}"
       - name: echo note
@@ -34,7 +36,6 @@ jobs:
         run: echo "::warning::The value of variable x is something warning"
       - name: echo error
         run: echo "::error::This is an error message error"
-
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
         run: echo "The build job was successful!"
