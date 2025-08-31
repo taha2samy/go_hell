@@ -42,6 +42,7 @@ jobs:
       - name: just echo id
         run: echo ${{needs.build.outputs.build_id}}
       - name: warning
-        run: echo "::warning file=README.md,line=1,col=1,endColumn=1::Missing semicolon"
-      - name: error
-        run: echo "::error file=README.md,line=1,col=1,endColumn=1::Error in README.md"
+      - name: show warning and error with file link
+        run: |
+          echo "::warning file=README.md,line=1::The value of variable x is something warning"
+          echo "::error file=README.md,line=1::This is an error message error"
