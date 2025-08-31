@@ -43,4 +43,4 @@ jobs:
       - name: warning
         run: echo "::warning file=README.md,line=1,col=1,endColumn=1::Missing semicolon"
       - name: error
-        run: echo "::error file=README.md,line=1,col=1,endColumn=1::Error in app.js"
+        run: echo "::error file=README.md,line=1,col=1,endColumn=1::Error in README.md"
