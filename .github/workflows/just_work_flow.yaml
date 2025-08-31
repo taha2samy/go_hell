@@ -2,7 +2,7 @@ name: just_example on needs
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   build:
