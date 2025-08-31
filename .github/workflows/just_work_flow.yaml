@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Deploying with the correct ID
         run: echo "Deploying Build ID:${x}"
-      - name: echo debug
+      - name: echo note
         run: echo "::debug::The value of variable x is something debug"
       - name: echo warning
         run: echo "::notice::The value of variable x is something note"
