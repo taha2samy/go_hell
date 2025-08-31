@@ -22,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       x: "${{ needs.build.outputs.build_id }}"
-      ACTIONS_STEP_DEBUG: true
     needs: build
     steps:
       - name: Deploying with the correct ID
@@ -30,8 +29,6 @@ jobs:
       - name: echo note
         run: echo "::debug::The value of variable x is something debug"
       - name: echo note
-        env:
-          ACTIONS_STEP_DEBUG: true
         run: echo "::debug::The value of variable x is something debug with ACTIONS_STEP_DEBUG debug"
 
       - name: echo warning
