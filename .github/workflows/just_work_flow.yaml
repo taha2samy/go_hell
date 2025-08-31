@@ -28,6 +28,11 @@ jobs:
         run: echo "Deploying Build ID:${x}"
       - name: echo note
         run: echo "::debug::The value of variable x is something debug"
+      - name: echo note
+        env:
+          ACTIONS_STEP_DEBUG: true
+        run: echo "::debug::The value of variable x is something debug with ACTIONS_STEP_DEBUG: true"
+
       - name: echo warning
         run: echo "::notice::The value of variable x is something note"
       - name: echo warning
