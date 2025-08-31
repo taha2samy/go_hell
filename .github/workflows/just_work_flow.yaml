@@ -27,9 +27,12 @@ jobs:
       - name: Deploying with the correct ID
         run: echo "Deploying Build ID:${x}"
       - name: echo debug
-        run: echo "::debug::The value of variable x is something"
+        run: echo "::debug::The value of variable x is something debug"
       - name: echo warning
-        run: echo "::warning::The value of variable x is something"
+        run: echo "::note::The value of variable x is something note"
+      - name: echo warning
+        run: echo "::warning::The value of variable x is something warning"
+
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
         run: echo "The build job was successful!"
