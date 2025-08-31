@@ -28,6 +28,8 @@ jobs:
         run: echo "Deploying Build ID:${x}"
       - name: echo debug
         run: echo "::debug::The value of variable x is something"
+      - name: echo warning
+        run: echo "::warning::The value of variable x is something"
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
         run: echo "The build job was successful!"
