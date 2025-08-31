@@ -41,7 +41,32 @@ jobs:
         run: echo "The build job was successful!"
       - name: just echo id
         run: echo ${{needs.build.outputs.build_id}}
-      - name: show warning and error with file link
+  just_another_Deploy:
+    name: just anthor Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download the repository code
+        uses: actions/checkout@v3
+
+      - name: Deploy with Build ID
+        env:
+          BUILD_ID: ${{ needs.build.outputs.build_id }}
+        run: echo "Starting deployment for Build ID -> $BUILD_ID"
+
+      - name: Demonstrate Different Workflow Commands
         run: |
-          echo "::warning file=README.md,line=1::The value of variable x is something warning"
-          echo "::error file=README.md,line=1::This is an error message error"
+          echo "::debug::This is a general debug message."
+          echo "::notice::This is a general notice message."
+          echo "::warning::This is a general warning message."
+          echo "::error::This is a general error message."
+
+          echo "----------------------------------------------------"
+          echo "::notice file=README.md,line=1,title=FYI::Just a note on the README file."
+          echo "::warning file=README.md,line=2,title=Potential Issue::This line might need a review."
+          echo "::error file=README.md,line=4,title=Critical Error::Something is wrong on this line!"
+
+      - name: Check build job result
+        if: ${{ needs.build.result == 'success' }}
+        run: echo "Great! The 'build' job was successful, so we are deploying."
