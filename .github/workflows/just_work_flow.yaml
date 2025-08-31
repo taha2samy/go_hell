@@ -33,7 +33,7 @@ jobs:
       - name: echo warning
         run: echo "::warning::The value of variable x is something warning"
       - name: echo error
-        run: echo "::error::This is an error message"
+        run: echo "::error::This is an error message error"
 
       - name: Check build result (just for demonstration)
         if: ${{ needs.build.result == 'success' }}
